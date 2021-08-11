@@ -1,0 +1,927 @@
+// out: ../css/style.css
+html, body {
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+}
+h1, h2, h3, h4, h5, h6, ul, li, p, div, a {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 13px;
+	color: #000;
+	text-decoration: none;
+	list-style: none;
+}
+a {
+	cursor: pointer;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 0 30px;
+}
+
+.mobmenu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+	padding: 15px 15px;
+	transition: all 0.3s ease;
+	> i{
+		color: #001851;
+		font-size: 20px;
+		float: right;
+		cursor: pointer;
+		padding-top: 8px;
+		color: #fff;
+	}
+	> a{
+		float: left;
+		> i{
+			font-size: 35px;
+			color: #fff;
+		}
+	}
+	&.active{
+		padding: 5px 15px;
+		background-color: #fff;
+		box-shadow:0px 16px 100px 0px rgba(0,0,0,0.17);
+		> i{
+			color: #000;
+		}
+		> a{
+			> i{
+				color: #000;
+			}
+		}
+	}
+}
+
+.mobilemenu {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	&.active {
+		opacity: 1;
+		.menu-bar {
+			transform: none;
+		}
+	}
+	&.animation {
+		transition: all 0.3s ease;
+
+		.menu-bar {
+			transition: all 0.3s ease;
+		}
+	}
+	&.overflow{
+		visibility: visible;
+		.overlay{
+			visibility: visible;
+		}
+	}
+	.overlay {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		visibility: hidden;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+	.menu-bar {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: -300px;
+		width: 300px;
+		box-sizing: border-box;
+		z-index: 2;
+		background-color: #fff;
+		overflow:auto;
+		.menu{
+			text-align: center;
+			.menu-li{
+				padding: 5px 0;
+				font-size: 16px;
+				border-top: 1px solid #fff;
+				border-bottom: 1px solid #fff;
+				transition: all 0.3s ease;
+				cursor: pointer;
+				&:hover{
+					border-top: 1px solid #000;
+					border-bottom: 1px solid #000;
+				}
+			}
+		}
+	}
+}
+
+.header{
+	display: inline-block;
+	width: 100%;
+	background-image: url(../img/Header.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	z-index: 1;
+	&:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background:rgba(0, 24, 81, 0.7);
+		z-index: 2;
+	}
+	.wrapper{
+		padding-top: 170px;
+		padding-bottom: 200px;
+		.cont{
+			position: relative;
+			z-index: 3;
+			> h2{
+				color: #fff;
+				font-size: 40px;
+				font-weight: 400;
+			}
+			> h1{
+				color: #fff;
+				font-size: 50px;
+				padding-bottom: 40px;
+				font-weight: 900;
+			}
+			> a{
+				background-color: #c2d2e4;
+				color: #001851;
+				border-radius: 50px;
+				font-weight: 700;
+				padding: 15px 60px;
+				transition: all 0.3s ease;
+				&:hover{
+					background-color: #001851;
+					color: #c2d2e4;
+				}	
+			}
+		}
+	}
+}
+
+.items{
+	width: 100%;
+	background-color: #f3f6fa;
+	.wrapper{
+		padding-top: 120px;
+		padding-bottom: 120px;
+		.grid{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin: 0 -15px;
+			.item{
+				width: 25%;
+				box-sizing: border-box;
+				padding: 0 15px;
+				.box{
+					width: 200px;
+					text-align: center;
+					margin: 30px auto;
+					.icon{
+						> span{
+							color: #566676;		
+						}
+					}
+					> h1{
+						font-weight: 700;
+						color: #001851;
+						font-size: 17px;
+						padding-top: 10px;
+						padding-bottom: 10px;
+					}
+					> p{
+						font-weight: 300;
+						color: #566676;
+						line-height: 1.5;
+						font-size: 15px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.about{
+	display: inline-block;
+	width: 100%;
+	background-image: url(../img/Background.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	.wrapper{
+		text-align: center;
+		> h1{
+			font-weight: 900;
+			color: #001851;
+			font-size: 36px;
+			padding-top: 100px;
+			padding-bottom: 10px;
+		}
+		> p{
+			font-weight: 300;
+			color: #566676;
+			line-height: 1.5;
+			font-size: 15px;
+		}
+		.grid{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			Justify-content: center;
+			margin: 0 -30px;
+			padding-top: 40px;
+			padding-bottom: 60px;
+			.item{
+				width: 33%;
+				box-sizing: border-box;
+				padding: 0 15px;
+				padding-bottom: 40px;
+				.box{
+					display: inline-block;
+					width: 100%;
+					.lorem{
+						display: inline-block;
+						text-align: left; 
+						width: 100%;
+						padding-top: 25px;
+						> i{
+							float: left;
+							color: #001851;	
+							margin-top: 10px;
+						}
+						.cont{
+							float: left;
+							margin-left: 20px;
+							> h1{
+								font-weight: 700;
+								color: #001851;
+								font-size: 14px;
+								padding-bottom: 10px;
+							}
+							> p{
+								font-weight: 300;
+								color: #566676;
+								line-height: 1.5;
+								font-size: 15px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.numbers{
+	display: inline-block;
+	width: 100%;
+	background-image: url(../img/HappyTeam.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;	
+	background-position: center center;
+	position: relative;
+	z-index: 1;
+	&:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background:rgba(0, 24, 81, 0.7);
+		z-index: 2;
+	}
+	.wrapper{
+		padding-top: 100px;
+		position: relative;
+		text-align: center;
+		z-index: 3;
+		.activator{
+			font-weight: 900;
+			color: #fff;
+			font-size: 36px;
+		}
+		> h1{
+			color: #c2d2e4;
+			font-size: 50px;
+			font-weight: 900;
+			padding-bottom: 20px;
+		}
+		> p{
+			font-weight: 300;
+			color: #fff;
+			line-height: 1.5;
+			font-size: 15px;
+			padding-bottom: 40px;
+		}
+		.grid{
+			position: relative;
+			border-top: solid 1px #fff;
+			margin: 0 -15px;
+			padding-top: 40px;
+			z-index: 3;
+			.item{
+				width: 25%;
+				box-sizing: border-box;
+				padding: 0 15px;
+				float: left;
+				.mainbox{
+					text-align: center;
+					padding-bottom: 40px;
+					.change{
+						font-weight: 200;
+						font-size: 60px;
+						color: #fff;
+						opacity: 0;
+						&.active{
+							opacity: 1;
+							transition: all 0.4s ease;
+						}
+					}
+					> p{
+						font-weight: 300;
+						color: #fff;
+						font-size: 15px;
+					}
+				}
+			}
+			.item:last-child {
+				padding-bottom: 80px;
+			}
+		}
+	}
+}
+
+.pictures{
+	display: inline-block;
+	width: 100%;
+	text-align: center;	
+	.wrapper{
+		padding-top: 80px;
+		> h1{
+			font-weight: 900;
+			font-size: 32px;
+			color: #001851;
+			padding-bottom: 20px;
+		}
+		> p{
+			font-weight: 300;
+			color: #566676;
+			line-height: 1.5;
+			font-size: 15px;
+			padding-bottom: 40px;
+		}
+		.grid{
+			margin: 0 -30px;
+			.item{
+				width: 33%;
+				box-sizing: border-box;
+				padding: 0 15px;
+				float: left;
+				.image{
+					display: inline-block;
+					height: 250px;
+					width: 100%;
+					background-size: 100%;
+					background-repeat: no-repeat;
+				}
+			}
+			.item:last-child {
+				padding-bottom: 80px;
+			}
+		}
+	}
+}
+
+.works{
+	display: inline-block;
+	width: 100%;
+	background-color: #f3f6fa;
+	overflow: hidden;
+	.wrapper{
+		padding-top: 90px;
+		padding-bottom: 90px;
+		.grid{	
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			Justify-content: center;	
+			margin: 0 -40px;
+			.item{
+				width: 50%;
+				box-sizing: border-box;
+				float: left;
+				padding: 0 40px;
+				.content4{
+					display: block;
+					padding-bottom: 40px;
+					> h1{
+						font-weight: 700;
+						font-size: 30px;
+						color: #001851;
+					}
+					> h2{
+						font-weight: 700;
+						font-size: 18px;
+						color: #0032a6;
+						padding-top: 5px;
+						padding-bottom: 10px;
+					}
+					> p{
+						font-weight: 300;
+						color: #566676;
+						line-height: 1.5;
+						font-size: 15px;
+						padding-bottom: 15px;
+					}
+					> a{
+						background-color: #001851;
+						color: #fff;
+						border-radius: 50px;
+						font-weight: 700;
+						padding: 15px 60px;
+						transition: all 0.3s ease;
+						&:hover{
+							background-color: #c2d2e4;
+							color: #001851;
+						}	
+					}
+				}
+				.image{
+					height: auto;
+					width: 100%;
+					background-size: 100%;
+					margin: 0 auto;
+					position: relative;
+					z-index: 1;
+					&:after{
+						content: '';
+						position: absolute;
+						top: -20px;
+						left: 50%;
+						right: 10%;
+						bottom: -20px;
+						border: solid 5px #c2d2e2;
+						z-index: 2;
+					}
+				}
+			}
+		}
+	}
+}
+
+.feedback{
+	display: inline-block;
+	width: 100%;
+	background-image: url(../img/CallingPhone.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;	
+	background-position: center center;
+	position: relative;
+	z-index: 1;
+	&:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background:rgba(0, 24, 81, 0.7);
+		z-index: 2;
+	}
+	.wrapper{
+		padding-top: 90px;
+		padding-bottom: 120px;
+		.content5{
+			position: relative;
+			text-align: center;
+			z-index: 3;
+			> h1{
+				font-weight: 900;
+				font-size: 30px;
+				color: #fff;
+				padding-bottom: 20px;
+			}
+			> p{
+				font-weight: 300;
+				color: #fff;
+				line-height: 1.5;
+				font-size: 15px;
+				padding-bottom: 50px;
+			}
+			> a{
+				background-color: #c2d2e4;
+				color: #001851;
+				border-radius: 50px;
+				font-weight: 700;
+				padding: 15px 60px;
+				transition: all 0.3s ease;
+				&:hover{
+					background-color: #001851;
+					color: #c2d2e4;
+				}	
+			}
+		}
+	}
+}
+
+.contacts{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	.wrapper{
+		padding-top: 100px;
+		padding-bottom: 100px;
+		> h1{
+			font-weight: 900;
+			font-size: 32px;
+			color: #001851;
+			padding-bottom: 10px;
+		}
+		> p{
+			font-weight: 300;
+			color: #566676;
+			line-height: 1.5;
+			font-size: 15px;
+		}
+		.grid{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			Justify-content: center;	
+			margin: 0 -15px;
+			.itemRotate{
+				width: 33%;
+				box-sizing: border-box;
+				padding: 0 15px;
+				padding-top: 40px;
+				float: left;
+				perspective: 1000px;
+				&.active{
+					.rotate{
+						transform: rotateY(180deg);
+					}
+				}
+				.rotate{
+					position: relative;
+					transform-style: preserve-3d;
+					transition: all 0.5s ease;
+					.image3d{
+						border: 4px double #ccc;
+						.image{
+							display: inline-block;
+							height: 300px;
+							width: 100%;
+							background-size: cover;
+							background-repeat: no-repeat;
+							backface-visibility: hidden;
+							.links{
+								position: relative;
+								top: 265px;
+								> a{
+									> i{
+										color: #fff;
+										margin-left: 7px;
+										margin-right: 7px;
+										transition: all 0.3s ease;
+									}
+									&:hover{
+										> i{
+											color: #c2d2e4;
+										}
+									}	
+								} 
+								
+							}
+						}	
+						> h1{
+							font-weight: 700;
+							color: #001851;
+							font-size: 14px;
+							padding-top: 15px;
+						}
+						> h2{
+							font-weight: 300;
+							color: #566676;
+							font-size: 12px;
+						}
+						.rotation{
+							cursor: pointer;
+						}
+					}
+				.txt{
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color: #fff;
+					border: 4px double #ccc;
+					text-align: center;
+					backface-visibility: hidden;
+					transform: rotateY(180deg);
+					> i{
+						position: absolute;
+						top: -5px;
+						right: -6px;
+						z-index: 5;
+						color: #ff3b3b;
+						transition: all 0.3s ease;
+						cursor: pointer;
+						&:hover{
+							color: #b50404;	
+						}
+					}
+				}
+			}
+
+			}
+
+		}
+	}
+}
+
+.bottom{
+	display: inline-block;
+	width: 100%;
+	background-image: url(../img/Keyboard.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;	
+	background-position: center center;
+	position: relative;
+	z-index: 1;
+	&:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background:rgba(0, 24, 81, 0.7);
+		z-index: 2;
+	}
+	.wrapper{
+		position: relative;
+		z-index: 3;
+		padding-top: 50px;
+		.box{
+			display: inline-block;
+			width: 100%;
+			> h1{
+				float: left;
+				width: 80%;
+				font-weight: 700;
+				font-size: 25px;
+				color: #fff;
+				padding-top: 10px;
+				padding-bottom: 50px;
+			}
+			> a{
+				float: right;
+				background-color: #c2d2e4;
+				color: #001851;
+				border-radius: 50px;
+				font-weight: 700;
+				padding: 15px 60px;
+				transition: all 0.3s ease;
+				&:hover{
+					background-color: #001851;
+					color: #c2d2e4;
+				}	
+			}
+		}
+	}
+}
+
+
+// md
+@media (max-width: 1200px) {
+	.header{
+		background-image: url(../img/1200Header.jpg);
+	}
+	.about{
+		background-image: url(../img/1200Background.png);
+	}
+	.numbers{
+			background-image: url(../img/1200HappyTeam.jpg);
+	}
+	.feedback{
+		background-image: url(../img/1200CallingPhone.jpg);
+	}
+	.bottom{
+		background-image: url(../img/1200Keyboard.jpg);	
+	}
+}
+
+// sm
+@media (max-width: 900px) {
+	.items{
+		.wrapper{
+			.grid {
+				.item {
+					width: 50%;
+				}
+			}	
+		}
+	}
+
+	.about{
+		background-image: url(../img/900Background.png);
+		.wrapper{
+			.grid {
+				.item {
+					width: 50%;
+					.box{
+						width: 100%;
+						.image{
+							width: 100%;
+						}
+						.lorem{
+							.cont{
+								margin-left: 8px;
+							}
+						}
+					}
+				}
+			}	
+		}
+	}
+
+	.numbers{
+		background-image: url(../img/900HappyTeam.jpg);
+		.wrapper{
+			.grid{
+				.item{
+					width: 50%;	
+				}
+			}
+		}
+	}
+
+	.pictures{
+		.wrapper{
+			.grid{
+				.item{
+					width: 50%;		
+					padding-bottom: 20px;
+				}
+				.item:last-child{
+					margin: 0 auto;
+					padding-bottom: 80px;
+					float: none;
+				}
+			}
+		}
+	}
+
+	.works{
+		.wrapper{
+			.grid{
+				.item{
+					width: 100%;	
+				}
+				.item:last-child{
+					width: 75%;	
+				}
+			}
+		}		
+	}
+
+	.feedback{
+		background-image: url(../img/900CallingPhone.jpg);
+	}
+
+	.contacts{
+		.wrapper{
+			.grid{
+				.itemRotate{
+					width: 50%;	
+					padding-bottom: 40px;
+				}
+			}
+		}
+	}
+	.bottom{
+		background-image: url(../img/900Keyboard.jpg);	
+		.wrapper{
+			.box{
+				> a{
+					float: left;
+					margin-top: 0;
+					margin-bottom: 50px;
+				}
+			}
+		}
+	}
+}
+
+// xs
+@media (max-width: 600px) {
+	.header{
+		background-image: url(../img/600Header.jpg);
+	}
+	.items{
+		.wrapper{
+			.grid {
+				.item {
+					width: 100%;
+				}
+			}	
+		}
+	}
+
+	.about{
+		background-image: url(../img/600Background.png);
+		.wrapper{
+			.grid {
+				.item {
+					width: 100%;
+					.box{
+						width: 100%;
+						.image{
+							width: 100%;
+						}
+						.lorem{
+							.cont{
+								margin-left: 8px;
+							}
+						}
+					}
+				}
+			}	
+		}
+	}
+
+	.numbers{
+		background-image: url(../img/600HappyTeam.jpg);
+		.wrapper{
+			.grid{
+				.item{
+					width: 100%;	
+				}
+			}
+		}
+	}
+
+	.pictures{
+		.wrapper{
+			.grid{
+				.item{
+					width: 100%;		
+				}
+			}
+		}
+	}
+
+	.works{
+		.wrapper{
+			.grid{
+				.item{
+					width: 90%;	
+				}
+				.item:last-child{
+					width: 90%;	
+				}
+			}
+		}		
+	}
+
+	.feedback{
+		background-image: url(../img/600CallingPhone.jpg);
+	}
+
+
+	.contacts{
+		.wrapper{
+			.grid{
+				.itemRotate{
+					width: 100%;	
+				}
+			}
+		}
+	}
+	.bottom{
+		background-image: url(../img/600Keyboard.jpg);	
+	}
+}
